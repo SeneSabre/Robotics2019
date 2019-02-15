@@ -6,12 +6,15 @@ void setup() {
 }
 
 void loop() {
-  //mcontrol.inMotors();
-  mcontrol.PivotL(70);
+  mcontrol.PivotL(45);
+  //delay(1000);
+  //mcontrol.PivotR(45);
+  delay(1000);
   //mcontrol.PivotR(50);
   ///delay(3000);
   //mcontrol.TurnL(1);
-  //delay(3000);
+  //delay(1000);
+  //mcontrol.Stop();
+  //delay(1000);
   //mcontrol.TurnR(1); 
-  //delay(3000);
 }
