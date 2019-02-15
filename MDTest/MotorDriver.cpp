@@ -11,7 +11,6 @@
 #include "MotorDriver.h"
 
 //Beginning at least of functions
-MotorDriver::MotorDriver(){};
 
 void MotorDriver::initMotors(){   //Set up all pins for motors(initiate motors)
   //pinMode(PwmPinL, OUTPUT);
@@ -46,27 +45,22 @@ void MotorDriver::SetR_MPower(int R_Pwm){ //Function to change power of right mo
 
 }
 void MotorDriver::SetR_Direction(int Dir){ //Function to set right motor direction
-  SetDirection(Dir,dir_RF);
-  SetDirection(Dir,dir_RB);
+digitalWrite(dir_RF, Dir);
+digitalWrite(dir_RB, Dir);
 }
 void MotorDriver::SetL_Direction(int Dir){ //Set left motor direction(set same direction as right, set to correct it)
-  SetDirection(Dir, dir_LF);
-  SetDirection(Dir, dir_LB);
+digitalWrite(dir_LF, Dir);
+digitalWrite(dir_LB, Dir);
 }
 void MotorDriver::SetL_MPower(int L_Pwm){ //Set left motor power
   SetPower(L_Pwm, pwm_LF);
   SetPower(L_Pwm, pwm_LB); 
 }
-
-//void MotorDriver::Stop(int Curr_Pwr){}
-  //decrement function loop until zero
-  
-
-//void MotorDriver::MGradualTurn(){
-  //Parameters to turn specified value(some type of arc angle) into a function to control left and right power
-  //to allow bot to do this, will likely require some trial and error
-  //This will use encoder
-
-//void MotorDriver::MPivotTurn(){}
-  //Turn bot on a dime one direction or the other a certain amount(likely an angle in degrees)
-  //This will use encoder and require some trial and error
+void MotorDriver::PivotL(int degree){
+;
+  SetR_Direction(0);
+  SetL_Direction(HIGH);
+  SetR_MPower(75);
+  SetL_MPower(75); 
+  delay(50);
+}

@@ -6,13 +6,13 @@ void setup() {
 }
 
 void loop() {
+
  mdriver.initMotors();
- mdriver.SetR_Direction(0);
- mdriver.SetR_MPower(150);
-  delay(5000);
-   mdriver.SetL_Direction(0);
- mdriver.SetL_MPower(150);
- delay(5000);
-  //delay(2000);
+ mdriver.PivotL(1);
+ //mdriver.SetR_Direction(1);
+ //mdriver.SetL_Direction(1);
+// mdriver.SetL_MPower(75);
+ //mdriver.SetR_MPower(75);
+ //delay(50);
   
 }
